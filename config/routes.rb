@@ -2,7 +2,6 @@ Blog::Application.routes.draw do
   
   resources :stores do
     resources :addresses
-    match '/add_address' => 'stores#add_address'
   end
   
   resources :posts do
