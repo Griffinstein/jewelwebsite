@@ -52,7 +52,7 @@ class StoresController < ApplicationController
     
     respond_to do |format|
       if @store.save
-        format.html { redirect_to('/stores/'+@store.id.to_s+'/add_address', :notice => 'Store was successfully created.') }
+        format.html { redirect_to(new_store_address_path(@store), :notice => 'Store was successfully created.') }
         format.xml  { render :xml => @store, :status => :created, :location => @store }
       else
         format.html { render :action => "new" }
