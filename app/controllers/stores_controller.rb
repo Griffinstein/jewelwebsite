@@ -35,8 +35,8 @@ class StoresController < ApplicationController
   
   # GET /stores/:id/add_address
   # GET /stores/:id/add_address.xml
-  def add_address()
-  @store = Store.find(1)
+  def add_address
+    @store = Store.find(request.request_uri.split('/')[2].to_i)
 
     respond_to do |format|
       format.html # add_address.html.erb
