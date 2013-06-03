@@ -2,6 +2,7 @@ Blog::Application.routes.draw do
   
   resources :stores do
     resources :addresses
+    match '/add_address' => 'stores#add_address'
   end
   
   resources :posts do
@@ -9,6 +10,10 @@ Blog::Application.routes.draw do
   end
 
   get "home/index"
+  
+  #match '/stores/add_address' => 'stores#add_address'
+
+  #match '/add_address' => 'stores#add_address'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -26,7 +26,6 @@ class StoresController < ApplicationController
   # GET /stores/new.xml
   def new
     @store = Store.new
-    @address = Address.new
     
     respond_to do |format|
       format.html # new.html.erb
@@ -36,8 +35,8 @@ class StoresController < ApplicationController
   
   # GET /stores/:id/add_address
   # GET /stores/:id/add_address.xml
-  def add_address
-    @store = Store.find(params[:id])
+  def add_address()
+  @store = Store.find(1)
 
     respond_to do |format|
       format.html # add_address.html.erb
@@ -49,10 +48,11 @@ class StoresController < ApplicationController
   # POST /stores.xml
   def create
     @store = Store.new(params[:store])
-
+    @store.address = Address.new
+    
     respond_to do |format|
       if @store.save
-        format.html { redirect_to(new_store_path, :notice => 'Store was successfully created.') }
+        format.html { redirect_to('/stores/'+@store.id.to_s+'/add_address', :notice => 'Store was successfully created.') }
         format.xml  { render :xml => @store, :status => :created, :location => @store }
       else
         format.html { render :action => "new" }
