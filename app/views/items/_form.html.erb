@@ -1,0 +1,71 @@
+<%= form_for([@store, @store.items.build]) do |f| %>
+  <div class="field">
+    <%= f.label :Name %><br />
+    <%= f.text_field :name %>
+  </div> 
+  <div class="field">
+    <%= post_form.label :Style %><br />
+    <%= post_form.select :style, [['Bangles','Bangles'],  
+		['Bracelets','Bracelets'], 	
+		['Brooches','Brooches'],
+		['Childrens Jewellery','Childrens Jewellery'],
+		['Dress rings','Dress rings'],
+		['Earrings','Earrings'],
+		['Engagement','Engagement'],
+		['Jewellery Boxes & Organisers','Jewellery Boxes & Organisers'],
+		['Loose Gemstones','Loose Gemstones'],
+		['Mens Jewellery','Mens Jewellery'],
+		['Tribal, Ethnic Jewellery','Tribal, Ethnic Jewellery'],
+		['Vintage, Antique Jewellery','Vintage, Antique Jewellery'],
+		['Watch Accessories','Watch Accessories'],
+		['Watches','Watches'],
+		['Wedding ring male','Wedding ring male'],
+		['Wedding ring female','Wedding ring female']]%>
+  </div>
+  <div class="field">
+  	<%= post_form.label :Occasion %><br />
+  	<%= post_form.select :occassion, [['Anniversary/Eternity','Anniversary/Eternity'],
+  		['Birth','Birth'],
+		['Christening','Christening'], 	
+		['Confirmation','Confirmation'],  	
+		['Engagement','Engagement'],
+		['Graduation','Graduation'],
+		['Memorial','Memorial'],
+		['My First Jewellery','My First Jewellery'],
+		['New Mum','New Mum'],
+		['Wedding','Wedding'],
+		['Sweet 16th','Sweet 16th'],
+		['18th Birthday','18th Birthday'],
+		['21st Birthday','21st Birthday'],
+		['25th Birthday','25th Birthday'],
+		['30th Birthday','30th Birthday'],
+		['40th Birthday','40th Birthday'],
+		['50th Birthday','50th Birthday'],
+		['60th Birthday','60th Birthday'],
+		['70th Birthday','70th Birthday'],
+		['80th Birthday+','80th Birthday+'],
+		['10yr Wedding Anniversary','10yr Wedding Anniversary'],
+		['20yr Wedding Anniversary','20yr Wedding Anniversary'],
+		['25yr Wedding Anniversary','25yr Wedding Anniversary'],
+		['30yr Wedding Anniversary','30yr Wedding Anniversary'],
+		['40yr Wedding Anniversary','40yr Wedding Anniversary'],
+		['50yr Wedding Anniversary','50yr Wedding Anniversary'],
+		['60yr Wedding Anniversary','60yr Wedding Anniversary']]%>
+  </div>
+  <div class="field">
+    <%= f.label :Price %><br />
+    <%= f.text_field :price %>
+  </div>  
+  <div class="field">
+    <%= f.label :Image %><br />
+    <%= f.text_field :image %>
+  </div>  
+  <div class="field">
+    <%= f.label :Description %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+

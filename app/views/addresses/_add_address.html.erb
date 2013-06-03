@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+ 
+<%= form_for([@store, @store.build_address]) do |f| %>
+  <div class="field">
+    <%= f.label :State %><br />
+    <%= f.select :state, [['ACT','ACT'],  
+		['NT','NT'], 	
+		['NSW','NSW'],
+		['Qld','Qld'],
+		['Tas','Tas'],
+		['SA','SA'],
+		['Vic','Vic'],
+		['WA','WA']]%>
+  </div>
+  <div class="field">
+    <%= f.label :Town %><br />
+    <%= f.text_field :town %>
+  </div>
+    <div class="field">
+    <%= f.label :Suburb %><br />
+    <%= f.text_field :suburb %>
+  </div>
+    <div class="field">
+    <%= f.label :Street %><br />
+    <%= f.text_field :street %>
+  </div>
+    <div class="field">
+    <%= f.label :Postcode %><br />
+    <%= f.text_field :postcode %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

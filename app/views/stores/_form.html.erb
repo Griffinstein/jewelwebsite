@@ -1,0 +1,21 @@
+<%= form_for(@store) do |store_form| %>
+  <% if @store.errors.any? %>
+  <div id="errorExplanation">
+    <h2><%= pluralize(@store.errors.count, "error") %> prohibited this post from being saved:</h2>
+    <ul>
+    <% @store.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+  
+  <div class="field">
+    <%= store_form.label :name %><br />
+    <%= store_form.text_field :name %>
+  </div>
+ 
+  <div class="actions">
+    <%= store_form.submit %>
+  </div>
+<% end %>
