@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+ 
+<p>
+  <b>Name:</b>
+  <%= @item.name %>
+</p>
+<p>
+  <b>Style:</b>
+  <%= @item.style %>
+</p>
+<p>
+  <b>Price:</b>
+  <%= @item.price %>
+</p>
+<p>
+  <b>Occasion:</b>
+  <%= @item.occassion %>
+</p>
+<p>
+  <b>Description:</b>
+  <%= @item.description %>
+</p>
+<p>
+  <b>Iamge:</b>
+  <%= @item.image %>
+</p>
+
+<%= link_to 'Back', store_items_path(@store) %>

@@ -7,15 +7,17 @@
     <th>Town</th>
     <th>Staff</th>
     <th>No. Items</th>
+    <th></th>
   </tr>
 
 <% @stores.each do |store| %>
   <tr>
   	<td><%= store.id %></td>
     <td><%= store.name %></td>
-    <td><%= 'store.address.town' %></td>
+    <td><%= store.address.town %></td>
     <td><%= 'store.staff?' %></td>
-    <td><%= 'store.items.size' %></td>
+    <td><%= store.items.size %></td>
+    <td><%= link_to 'Items', store_items_path(store) %></td>
   </tr>
 <% end %>
 </table>

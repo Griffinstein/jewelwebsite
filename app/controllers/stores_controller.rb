@@ -48,7 +48,7 @@ class StoresController < ApplicationController
   # POST /stores.xml
   def create
     @store = Store.new(params[:store])
-    @store.address = Address.new
+    #@store.address = Address.new
     
     respond_to do |format|
       if @store.save

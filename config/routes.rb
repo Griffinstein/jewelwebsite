@@ -2,6 +2,7 @@ Blog::Application.routes.draw do
   
   resources :stores do
     resources :addresses
+    resources :items
   end
   
   resources :posts do

@@ -4,8 +4,8 @@
     <%= f.text_field :name %>
   </div> 
   <div class="field">
-    <%= post_form.label :Style %><br />
-    <%= post_form.select :style, [['Bangles','Bangles'],  
+    <%= f.label :Style %><br />
+    <%= f.select :style, [['Bangles','Bangles'],  
 		['Bracelets','Bracelets'], 	
 		['Brooches','Brooches'],
 		['Childrens Jewellery','Childrens Jewellery'],
@@ -23,8 +23,8 @@
 		['Wedding ring female','Wedding ring female']]%>
   </div>
   <div class="field">
-  	<%= post_form.label :Occasion %><br />
-  	<%= post_form.select :occassion, [['Anniversary/Eternity','Anniversary/Eternity'],
+  	<%= f.label :Occasion %><br />
+  	<%= f.select :occassion, [['Anniversary/Eternity','Anniversary/Eternity'],
   		['Birth','Birth'],
 		['Christening','Christening'], 	
 		['Confirmation','Confirmation'],  	
