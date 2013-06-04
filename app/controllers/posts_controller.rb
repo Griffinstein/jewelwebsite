@@ -1,12 +1,11 @@
 class PostsController < ApplicationController
-  
   #http_basic_authentication_with :name => "admin", :password => "admin", :except => [:index, :show]
  
   # GET /posts
   # GET /posts.xml
   def index
     @posts = Post.all
-    #debugger
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @posts }

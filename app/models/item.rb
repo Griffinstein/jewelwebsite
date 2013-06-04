@@ -1,4 +1,6 @@
 class Item < ActiveRecord::Base
+  attr_accessible :name, :price, :style, :description, :occassion, :image
+  
   validates :name,        :presence => true
   validates :price,       :presence => true
   validates :style,       :presence => true

@@ -10,6 +10,7 @@
     <th>Style</th>
     <th>Occassion</th>
     <th></th>
+    <th></th>
   </tr>
 
 <% @store.items.each do |item| %>
@@ -20,15 +21,12 @@
     <td><%= item.style %></td>
     <td><%= item.occassion %></td>
     <td><%= link_to 'View', store_item_path(@store,item) %></td>
+    <td><%= link_to 'Edit', edit_store_item_path(@store,item) %></td>
   </tr>
 <% end %>
 </table>
-
+<%= link_to 'New Item', new_store_item_path(@store)%>
 <br />
-
-<h2>Add an item:</h2>
-<%= render "items/form" %>
-
 
 <%= link_to 'Back to Store', store_path(@store) %>
 <%= link_to 'Back to Stores', stores_path %>

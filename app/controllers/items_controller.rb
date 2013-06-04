@@ -5,7 +5,7 @@ class ItemsController < ApplicationController
   # GET /stores/:id/items
   def index
    @store = Store.find(params[:store_id])
-    #debugger
+   
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @posts }
@@ -23,10 +23,23 @@ class ItemsController < ApplicationController
       format.xml  { render :xml => @item }
     end
   end
+  
+  # GET /stores/:id/items/new
+  # GET /stores/:id/items/new.xml
+  def new
+    @item = Item.new
+    @store = Store.find(params[:store_id])
+    @item = @store.items.build
+    respond_to do |format|
+      format.html # new.html.erb
+      format.xml  { render :xml => @item }
+    end
+  end
 
   # GET /stores/:id/items/1/edit
   def edit
-    @post = Post.find(params[:id])
+    @item = Item.find(params[:id])
+    @store = Store.find(params[:store_id])
   end
 
   # POST /stores/:id/items
@@ -40,15 +53,16 @@ class ItemsController < ApplicationController
   # PUT /stores/:id/items/1
   # PUT /stores/:id/items/1.xml
   def update
-    @post = Post.find(params[:id])
+    @item = Item.find(params[:id])
+    @store = Store.find(params[:store_id])
 
     respond_to do |format|
-      if @post.update_attributes(params[:post])
-        format.html { redirect_to(@post, :notice => 'Post was successfully updated.') }
+      if @item.update_attributes(params[:item])
+        format.html { redirect_to(store_item_path(@store,@item), :notice => 'Post was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
-        format.xml  { render :xml => @post.errors, :status => :unprocessable_entity }
+        format.xml  { render :xml => @item.errors, :status => :unprocessable_entity }
       end
     end
   end
