@@ -1,5 +1,7 @@
 Blog::Application.routes.draw do
   
+  resources :users
+  
   resources :stores do
     resources :addresses
     resources :items
