@@ -8,6 +8,23 @@ gem 'rails', '3.0.12'
 gem 'sqlite3'
 gem 'mysql2'
 gem 'ruby-debug'
+
+group :development, :test do
+  gem 'rspec-rails', '2.11.0'
+end
+
+
+group :development do
+  gem 'annotate', '2.5.0'
+end
+
+#group :assets do
+#  gem 'compass-rails'
+#end
+
+#gem 'bootstrap-sass', '2.1'
+#gem 'bcrypt-ruby', '3.0.1'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 

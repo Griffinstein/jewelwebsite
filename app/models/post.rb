@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: posts
+#
+#  id         :integer          not null, primary key
+#  name       :string(255)
+#  title      :string(255)
+#  content    :text
+#  created_at :datetime
+#  updated_at :datetime
+#  HerpDerp   :string(255)
+#
+
 class Post < ActiveRecord::Base
   attr_accessible :content, :name, :title, :tags_attributes
  
