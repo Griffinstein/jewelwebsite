@@ -4,6 +4,7 @@ class AddressesController < ApplicationController
     @store = Store.find(params[:store_id])
     @address = Address.new
     @store.address = @address
+    #@store.address = @address
     
     respond_to do |format|
       format.html # new.html.erb

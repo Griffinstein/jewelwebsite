@@ -16,7 +16,7 @@ Blog::Application.routes.draw do
   #match '/stores/add_address' => 'stores#add_address'
 
   #match '/add_address' => 'stores#add_address'
-
+#match '/add_address' => 'stores#add_address'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
